@@ -9,8 +9,8 @@ public class AnalyticsCounter {
 	public static void main(String[] args) {
 		try {
 			SymptomReader symptome = new SymptomReader();
-			TreeMap<String, Integer> map = symptome.getSymptomes();
-			symptome.getResult(map);
+			TreeMap<String, Integer> map = symptome.getSymptomesFromAFile();
+			symptome.getWriterFromATreeMap(map);
 		} catch (FileReaderException e) {
 			System.err.println("Problème avec le fichier d'entrée : " + e.getMessage());
 		} catch (FileWriterException e) {
